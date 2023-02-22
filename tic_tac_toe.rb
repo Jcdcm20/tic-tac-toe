@@ -1,26 +1,14 @@
-class Board
-  @@board =
-  [
-    {top_left: ' _ ', top_mid: ' _ ', top_right: ' _ '},
-    {mid_left: ' _ ', mid: ' _ ', mid_right: ' _ '},
-    {bot_left: ' _ ', bot_mid: ' _ ', bot_right: ' _ '}
-  ]
+class Player
 
-  def draw_board
-    puts 'TIC TAC TOE'
-    puts '___________'
-    @@board.each do |row|
-      print '|'
-      row.each do |k, v|
-        print row[k]
+  @@num_of_players = 1
 
-      end
-      print '|'
-      puts ''
-    end
+  attr_reader :id, :symbol
+
+  def initialize(symbol)
+    @symbol = symbol
+    @id = @@num_of_players
+
+    @@num_of_players += 1
   end
+
 end
-
-board = Board.new
-
-board.draw_board
