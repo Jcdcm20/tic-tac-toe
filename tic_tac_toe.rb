@@ -1,9 +1,9 @@
 class Board
-  @@board = 
+  @@board =
   [
-    {top_left: ' ', top_mid: ' ', top_right: ' '},
-    {mid_left: ' ', mid: ' ', mid_right: ' '},
-    {bot_left: ' ', bot_mid: ' ', bot_right: ' '}
+    {top_left: ' _ ', top_mid: ' _ ', top_right: ' _ '},
+    {mid_left: ' _ ', mid: ' _ ', mid_right: ' _ '},
+    {bot_left: ' _ ', bot_mid: ' _ ', bot_right: ' _ '}
   ]
 
   def draw_board
