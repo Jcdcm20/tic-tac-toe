@@ -12,3 +12,31 @@ class Player
   end
 
 end
+
+class Board
+  
+  def initialize
+    @board = [[' ', ' ', ' '],
+              [' ', ' ', ' '],
+              [' ', ' ', ' ']]
+  end
+
+  def draw_board
+    @board.each do |row|
+      i = 0
+      while i < 3
+        if i < 2
+          print " #{row[i]} |"
+        else
+          puts " #{row[i]}"
+        end
+        i += 1
+      end
+      puts '-----------'
+    end
+  end
+end
+
+board = Board.new
+
+board.draw_board
