@@ -13,7 +13,11 @@ class Board
       puts "-----------"
     end
   end
+
+  def update_board(square, symbol)
+    @board[square - 1] = symbol
+  end
 end
 
 board = Board.new
-board.draw_board
+
