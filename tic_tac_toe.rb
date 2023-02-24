@@ -23,3 +23,21 @@ class Board
 end
 
 board = Board.new
+
+winner = false
+
+while !winner do
+  board.draw_board
+  
+  puts "Choose 1 - 9: "
+  x = gets().to_i
+
+  board.update_board(x, 'X')
+  board.draw_board
+
+  puts "Choose 1 - 9: "
+  o = gets().to_i
+
+  board.update_board(o, 'O')
+  board.draw_board
+end
