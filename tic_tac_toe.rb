@@ -1,17 +1,20 @@
 class Board
   
   def initialize
-    @board = [[' ', ' ', ' '],
-              [' ', ' ', ' '],
-              [' ', ' ', ' ']]
+    @board = [' ', ' ', ' ',
+              ' ', ' ', ' ',
+              ' ', ' ', ' ']
   end
 
   def draw_board
     system 'clear'
-    @board.each do |row|
-      puts " #{row[0]} | #{row[1]} | #{row[2]} "
-      puts "-----------"
-    end
+    puts "TIC TAC TOE"
+    puts " #{@board[0]} | #{@board[1]} | #{@board[2]}"
+    puts "-----------"
+    puts " #{@board[3]} | #{@board[4]} | #{@board[5]}"
+    puts "-----------"
+    puts " #{@board[6]} | #{@board[7]} | #{@board[8]}"
+
   end
 
   def update_board(square, symbol)
@@ -20,4 +23,3 @@ class Board
 end
 
 board = Board.new
-
