@@ -18,13 +18,29 @@ class Board
   def update_board(square, player)
     @board[square - 1] = player.symbol
   end
+
+  def check_winner(player)
+    if player.winner == true
+      puts "#{player.symbol} is the winner!"
+      return true
+    end
+  end
+
+  def check_square(square)
+    if @board[square - 1] == ' '
+      return true
+    end
+      return false
+  end
 end
 
 class Player
   attr_reader :symbol
+  attr_accessor :winner
 
   def initialize(symbol)
     @symbol = symbol
+    @winner = false
   end
 
   def square
@@ -41,13 +57,18 @@ winner = false
 
 player = players.sample
 
-unless winner
+while !board.check_winner(player) do
   board.draw_board
 
-  puts 'Choose 1 - 9: '
+  puts "#{player.symbol} - Choose 1 - 9: "
   square = player.square
+  
+  if board.check_square(square)
+    board.update_board(square, player)
+  else
+    next
+  end
 
-  board.update_board(square, player)
   board.draw_board
 
   if player == players[0]
