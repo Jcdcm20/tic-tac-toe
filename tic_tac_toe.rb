@@ -52,7 +52,7 @@ player = x
 
 
 i = 0
-while i < 5
+while i < 9
   print "#{player.symbol} choose 1 - 9: "
   
   board.check_square(player.get_square) ? player.mark_board(board) : next
