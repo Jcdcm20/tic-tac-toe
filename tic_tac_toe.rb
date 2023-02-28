@@ -5,21 +5,21 @@ class Board
     @board = [' ', ' ', ' ',
               ' ', ' ', ' ',
               ' ', ' ', ' ']
-    end
+  end
 
-    def draw_board
-      system 'clear'
-      puts 'TIC TAC TOE'
-      puts " #{board[0]} | #{board[1]} | #{board[2] }"
-      puts '-----------'
-      puts " #{board[3]} | #{board[4]} | #{board[5]} "
-      puts '-----------'
-      puts " #{board[6]} | #{board[7]} | #{board[8]} "
-    end
+  def draw_board
+    system 'clear'
+    puts 'TIC TAC TOE'
+    puts " #{board[0]} | #{board[1]} | #{board[2] }"
+    puts '-----------'
+    puts " #{board[3]} | #{board[4]} | #{board[5]} "
+    puts '-----------'
+    puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  end
 
-    def check_square(square)
-      board[square] == ' ' ? true : false
-    end
+  def check_square(square)
+    board[square] == ' ' ? true : false
+  end
 end
 
 class Player
@@ -50,9 +50,9 @@ o = Player.new('O')
 
 player = x
 
+game = true
 
-i = 0
-while i < 9
+while game
   print "#{player.symbol} choose 1 - 9: "
   
   board.check_square(player.get_square) ? player.mark_board(board) : next
@@ -61,5 +61,5 @@ while i < 9
 
   # Switch player
   player == x ? player = o : player = x
-  i += 1
+  
 end
