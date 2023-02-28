@@ -1,10 +1,22 @@
 class Board
   attr_accessor :board
+  attr_reader :winning_conditions
 
   def initialize
     @board = [' ', ' ', ' ',
               ' ', ' ', ' ',
               ' ', ' ', ' ']
+
+    @winning_conditions = [
+                          [board[0], board[1], board[2]],
+                          [board[3], board[4], board[5]],
+                          [board[6], board[7], board[8]],
+                          [board[0], board[3], board[6]],
+                          [board[1], board[4], board[7]],
+                          [board[2], board[5], board[8]],
+                          [board[0], board[4], board[8]],
+                          [board[2], board[4], board[6]]
+    ]
   end
 
   def draw_board
@@ -19,6 +31,12 @@ class Board
 
   def check_square(square)
     board[square] == ' ' ? true : false
+  end
+
+  def check_winner(player)
+    if winning_conditions.any? { |condition| condition.all? { |square| square == player.symbol}}
+      return true
+    end
   end
 end
 
